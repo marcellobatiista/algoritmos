@@ -12,16 +12,10 @@ def ordenar(lista):
             j = 1
             existe = False
             while (j <= len(tmp)-1):
-                if sucessor > tmp[j]:
+                if sucessor >= tmp[j]:
                     tmp.insert(j, sucessor)
                     existe = True
-                elif sucessor == tmp[j]:
-                    tmp.insert(j+1, sucessor)
-                    existe = True
-                    
-                if (existe):
                     break
-                    
                 j += 1
             if not(existe):
                 tmp.append(sucessor)
@@ -29,7 +23,7 @@ def ordenar(lista):
     return tmp
 
 
-lista = [-1,-4,0,-3,-1,124,54,4,6,4,7,7,4,6,7,1,2,4,36,8,54,456,456,456]
+lista = [8,0,1,0,5,5,8,-1,-8]
 
 ordem = ordenar(lista)
 
