@@ -9,21 +9,19 @@ def ordenar(lista):
         if (sucessor > primeiro):
             tmp.insert(0,sucessor)
         else:
-            j = 1
             existe = False
-            while (j <= len(tmp)-1):
-                if sucessor >= tmp[j]:
-                    tmp.insert(j, sucessor)
+            for j in enumerate(tmp):
+                if sucessor >= j[1]:
+                    tmp.insert(j[0], sucessor)
                     existe = True
                     break
-                j += 1
             if not(existe):
                 tmp.append(sucessor)
         i += 1
     return tmp
 
 
-lista = [8,0,1,0,5,5,8,-1,-8]
+lista = [8,0,1,0,6,-6,5,5,8,-1,-8]
 
 ordem = ordenar(lista)
 
